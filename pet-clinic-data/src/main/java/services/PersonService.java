@@ -4,12 +4,8 @@ import guru.springframework.sfgpetclinic.model.Person;
 
 import java.util.Set;
 
-public interface PersonService {
+public interface PersonService extends  CrudService<Person,Long>{
 
-    Person findById(Long id);
 
-    Person save(Person person);
-
-    Set<Person> findAll();
 
 }
