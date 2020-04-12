@@ -9,8 +9,8 @@ public class Person extends BaseEntitiy{
         return firstName;
     }
 
-    public void setFistName(String fistName) {
-        this.firstName = fistName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
