@@ -1,6 +1,7 @@
 package guru.springframework.sfgpetclinic.bootstrap;
 
 import guru.springframework.sfgpetclinic.model.Owner;
+import guru.springframework.sfgpetclinic.model.Pet;
 import guru.springframework.sfgpetclinic.model.PetType;
 import guru.springframework.sfgpetclinic.model.Vet;
 import guru.springframework.sfgpetclinic.services.PetTypeService;
@@ -9,6 +10,9 @@ import org.springframework.core.SpringVersion;
 import org.springframework.stereotype.Component;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import guru.springframework.sfgpetclinic.services.VetService;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -40,7 +44,7 @@ public class DataLoader implements CommandLineRunner {
         PetType dog = new PetType();
         dog.setName("figoo");
         PetType saveDogType= petTypeService.save(dog);
-        System.out.println("asdasds:"+saveDogType.getName());
+       // System.out.println("asdasds:"+saveDogType.getName());
 
         PetType cat= new PetType();
         cat.setName("kedicik");
@@ -49,12 +53,35 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1= new Owner();
         owner1.setFirstName("Fikret");
         owner1.setLastName("byk");
+        owner1.setAdress("Nalbantoğlu");
+        owner1.setCity("bursa");
+        owner1.setTelephone("123456788");
+
+
+        Pet fikos=new Pet();
+        fikos.setPetType(saveDogType);
+        fikos.setOwner(owner1);
+        fikos.setBirthDay(LocalDate.now());
+        fikos.setName("Figooooo111");
+
+        owner1.getPets().add(fikos);
 
         ownerService.save(owner1);
 
         Owner owner2= new Owner();
         owner2.setFirstName("Ayse");
         owner2.setLastName("byk");
+        owner2.setAdress("kalsacekntoğlu");
+        owner2.setCity("ankara");
+        owner2.setTelephone("2222000339");
+
+        Pet aysesPet=new Pet();
+        aysesPet.setPetType(saveCatType);
+        aysesPet.setOwner(owner2);
+        aysesPet.setBirthDay(LocalDate.now());
+        aysesPet.setName("ayseciikkkkk!!");
+
+        owner2.getPets().add(aysesPet);
 
         ownerService.save(owner2);
 
