@@ -67,7 +67,7 @@ public class DataLoader implements CommandLineRunner {
 
         vetService.save(vet2);
 
-        System.out.println("Vets are loaded....");
+        System.out.println("Vets are loaded.1...");
         System.out.println("version: " + SpringVersion.getVersion());
     }
 }
