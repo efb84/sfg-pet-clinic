@@ -4,13 +4,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 public class Visit extends  BaseEntitiy{
 
     @Column(name = "date")
-    private  LocalDateTime date;
+    private  LocalDate date;
 
 
     @Column(name = "description")
@@ -20,11 +20,11 @@ public class Visit extends  BaseEntitiy{
     @JoinColumn(name = "pet_id")
     private  Pet pet;
 
-    public LocalDateTime getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
