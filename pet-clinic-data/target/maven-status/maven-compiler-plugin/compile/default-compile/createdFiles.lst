@@ -9,6 +9,7 @@ guru\springframework\sfgpetclinic\model\Owner.class
 guru\springframework\sfgpetclinic\repositories\VistRepository.class
 guru\springframework\sfgpetclinic\repositories\OwnerRepository.class
 guru\springframework\sfgpetclinic\repositories\PetTypeRepository.class
+guru\springframework\sfgpetclinic\services\springdatajpa\VetSDJpaService.class
 guru\springframework\sfgpetclinic\repositories\PetRepository.class
 guru\springframework\sfgpetclinic\model\PetType.class
 guru\springframework\sfgpetclinic\services\PetTypeService.class
