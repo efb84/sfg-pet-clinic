@@ -28,6 +28,6 @@ public class OwnerController {
     public String findOwners() {
 
 
-        return "notimplmented";
+        return "notimplemented";
     }
 }

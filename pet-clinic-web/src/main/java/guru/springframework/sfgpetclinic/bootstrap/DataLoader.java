@@ -12,15 +12,18 @@ import java.time.LocalDate;
 public class DataLoader implements CommandLineRunner {
 
 
-    private final OwnerService ownerService;
 
-    private final VetService vetService;
-
-    private final PetTypeService petTypeService;
 
     private final SpecialityService specialityService;
 
-    private final VisitService visitService;
+
+
+    private final OwnerService ownerService;
+    private final VetService vetService;
+    private final PetTypeService petTypeService;
+     private final VisitService visitService;
+
+
 
  /*   public DataLoader() { ownerService= new OwnerServiceMap();
         vetService=new VetMapService();
@@ -111,12 +114,15 @@ public class DataLoader implements CommandLineRunner {
 
         visitService.save(catVisit);
 
-        Owner owner3 = new Owner();
-        //owner1.setFistName("");
+      /*  Owner owner3 = new Owner();
+        owner3.setFirstName("asd");
         owner3.setLastName("bos");
+        owner3.setAdress("ahmetveysel");
+        owner3.setCity("elazığ");
+        owner3.setTelephone("23333111a");
 
         ownerService.save(owner3);
-
+*/
         System.out.println("Owners are loaded.....");
 
 

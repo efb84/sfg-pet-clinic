@@ -41,10 +41,6 @@ public abstract class AbstractMapService<T extends BaseEntitiy, ID extends Long>
         map.entrySet().removeIf(entry -> entry.getValue().equals(object));
     }
 
-    T findByLastname(String lastName){
-
-        return map.get(lastName) ;
-    }
 
 
     public Long getNextId() {
