@@ -1,9 +1,23 @@
-version: 2.1
+version: 2
+jobs:
+  build:
+    - image:circle/openjdk:8-jdk
+    working_directory: ~repo
 
-orbs:
-  maven: circleci/maven@0.0.12
+    enviroment:
+      MAVEN_OPTS: -Xmx3200m
+    steps:
+    - checkout
 
-workflows:
-  maven_test:
-    jobs:
-      - maven/test # checkout, build, test, and upload test results
+    -restore_cache:
+        keys:
+        - v1-dependencies-{{ checksum "pom.xml" }}
+        - v1-dependencies-
+    -run: mvn dependency:go-offline
+
+    -save_cache:
+        paths:
+        - ~/.m2
+        key: v1-dependencies-{{ checksum "pom.xml" }}
+
+    -run: mvn install
