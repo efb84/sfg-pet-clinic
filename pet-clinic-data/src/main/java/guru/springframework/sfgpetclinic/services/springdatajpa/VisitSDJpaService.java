@@ -9,9 +9,13 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Created by jt on 8/7/18.
+ */
 @Service
 @Profile("springdatajpa")
-public class VisitSDJpaService implements VisitService{
+public class VisitSDJpaService implements VisitService {
+
     private final VisitRepository visitRepository;
 
     public VisitSDJpaService(VisitRepository visitRepository) {
@@ -20,9 +24,9 @@ public class VisitSDJpaService implements VisitService{
 
     @Override
     public Set<Visit> findAll() {
-        Set<Visit> visitSet=new HashSet<>();
-        visitRepository.findAll().forEach(visitSet::add);
-        return visitSet;
+        Set<Visit> visits = new HashSet<>();
+        visitRepository.findAll().forEach(visits::add);
+        return visits;
     }
 
     @Override
@@ -32,8 +36,7 @@ public class VisitSDJpaService implements VisitService{
 
     @Override
     public Visit save(Visit object) {
-        visitRepository.save(object);
-        return object;
+        return visitRepository.save(object);
     }
 
     @Override

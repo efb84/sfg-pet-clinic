@@ -9,21 +9,24 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Created by jt on 8/5/18.
+ */
 @Service
 @Profile("springdatajpa")
-public class PetTypeSdJpaService implements PetTypeService {
+public class PetTypeSDJpaService implements PetTypeService {
 
     private final PetTypeRepository petTypeRepository;
 
-    public PetTypeSdJpaService(PetTypeRepository petTypeRepository) {
+    public PetTypeSDJpaService(PetTypeRepository petTypeRepository) {
         this.petTypeRepository = petTypeRepository;
     }
 
     @Override
     public Set<PetType> findAll() {
-        Set<PetType> petTypeSet=new HashSet<>();
-        petTypeRepository.findAll().forEach(petTypeSet::add);
-        return petTypeSet;
+        Set<PetType> petTypes = new HashSet<>();
+        petTypeRepository.findAll().forEach(petTypes::add);
+        return petTypes;
     }
 
     @Override
@@ -33,8 +36,7 @@ public class PetTypeSdJpaService implements PetTypeService {
 
     @Override
     public PetType save(PetType object) {
-        petTypeRepository.save(object);
-        return object;
+        return petTypeRepository.save(object);
     }
 
     @Override

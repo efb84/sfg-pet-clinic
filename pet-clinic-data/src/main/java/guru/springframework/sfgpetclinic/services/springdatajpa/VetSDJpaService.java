@@ -7,9 +7,11 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
+/**
+ * Created by jt on 8/5/18.
+ */
 @Service
 @Profile("springdatajpa")
 public class VetSDJpaService implements VetService {
@@ -22,9 +24,9 @@ public class VetSDJpaService implements VetService {
 
     @Override
     public Set<Vet> findAll() {
-        Set<Vet> vetSet = new HashSet<>();
-        vetRepository.findAll().forEach(vetSet::add);
-        return vetSet;
+        Set<Vet> vets = new HashSet<>();
+        vetRepository.findAll().forEach(vets::add);
+        return vets;
     }
 
     @Override
@@ -34,8 +36,7 @@ public class VetSDJpaService implements VetService {
 
     @Override
     public Vet save(Vet object) {
-        vetRepository.save(object);
-        return object;
+        return vetRepository.save(object);
     }
 
     @Override
