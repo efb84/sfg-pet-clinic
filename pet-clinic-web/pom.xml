@@ -100,11 +100,11 @@
             <version>2.22.0</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
+        <!--dependency>
             <groupId>guru.springframework</groupId>
             <artifactId>pet-clinic-data</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+        </dependency-->
     </dependencies>
 
     <build>
